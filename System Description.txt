@@ -1,0 +1,9 @@
+# Sensors: 
+I used 3 IR sensors, each one will be placed on a specific hight based on the boxes sizes
+For example:
+first sensor will be placed on 10 CM to trace  the 10*10*10 boxes
+
+# Controller : Arduino 
+
+# Motors:
+I used 3 Servo motors each one is coneccted with on of the sensors and each motor will move in different angle
