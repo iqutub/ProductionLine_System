@@ -1,0 +1,81 @@
+#include <Servo.h>
+
+Servo moto1;
+Servo moto2;
+Servo moto3;
+int pos = 0;
+
+void setup()
+{
+  pinMode(11, INPUT);
+  pinMode(10,INPUT);
+  pinMode(9,INPUT);
+  
+  moto1.attach(7);
+  moto2.attach(6);
+  moto3.attach(5);
+  
+  Serial.begin(9600);
+}
+
+void loop()
+{
+
+// first sensor and motor:
+
+  if (digitalRead(11) == 1)
+  {
+    Serial.println(digitalRead(11));
+ 
+    for(pos = 0; pos <= 180; pos += 1)
+  {
+    moto1.write(pos);
+    delay(15);
+  }
+    for(pos = 180; pos >= 0; pos -= 1)
+  {
+    moto1.write(pos);
+    delay(15);
+  }
+
+  }
+  
+ // Second sensor and motor:
+ 
+   if (digitalRead(10) == 1)
+  {
+    Serial.println(digitalRead(10));
+ 
+    for(pos = 0; pos <= 90; pos += 1)
+  {
+    moto2.write(pos);
+    delay(15);
+  }
+    for(pos = 90; pos >= 0; pos -= 1)
+  {
+    moto2.write(pos);
+    delay(15);
+  }
+
+  }
+  
+ // third sensor and motor:
+ 
+   if (digitalRead(9) == 1)
+  {
+    Serial.println(digitalRead(9));
+ 
+    for(pos = 0; pos <= 270; pos += 1)
+  {
+    moto3.write(pos);
+    delay(15);
+  }
+    for(pos = 270; pos >= 0; pos -= 1)
+  {
+    moto3.write(pos);
+    delay(15);
+  }
+
+  }
+    
+}
